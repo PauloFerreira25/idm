@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app.js",
-    "dev": "docker run -it -e NPM_CMD=docker-dev -p 3000:3000 -v $(pwd):/app/src idm-core",
+    "dev": "docker run -it -e NPM_CMD=docker-dev -p 3000:3000 --network=host -v $(pwd):/app/src idm-core",
     "docker-dev":"nodemon app.js",
     "docker-build": "docker build -t idm-core ."
   },
