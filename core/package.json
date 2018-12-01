@@ -1,0 +1,22 @@
+{
+  "name": "core",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "dev": "docker run -it -e NPM_CMD=docker-dev -p 3000:3000 -v $(pwd):/app idm-core",
+    "docker-dev":"nodemon app.js",
+    "docker-build": "docker build -t idm-core ."
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "hapi": "^17.8.1",
+    "inert": "^5.1.2"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.7"
+  }
+}
