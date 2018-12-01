@@ -8,9 +8,11 @@ COPY package.json /app
 # We then run npm install to install
 # express for our application
 RUN npm install
+# ENV PATH="./node_modules/.bin:${PATH}"
 # We then copy the rest of our application
 # to the app direcoty
 COPY . /app
+# RUN find ./
 # We start our application by calling
 # npm start.
 EXPOSE 3000
